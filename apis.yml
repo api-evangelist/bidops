@@ -1,23 +1,60 @@
 aid: bidops
+
 name: Bidops
-description: 'Bidops is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Bidops provides a procurement and spend management platform that helps organizations automate purchasing, manage supplier relationships, and gain visibility into their spend. The solution integrates with ERP systems, offers analytics, and supports compliance with procurement policies, aiming to streamline the sourcing process for enterprises and public sector agencies.'
+
 url: https://raw.githubusercontent.com/api-evangelist/bidops/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
-- Company
-apis: []
+- Procurement
+- Spend Management
+- Automation
+- Enterprise
+- Public Sector
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/bidops-hosts.yml
+- type: Vendors
+  url: vendors/bidops-vendors.yml
+- type: DomainSecurity
+  url: security/bidops-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/bidops
+  url: https://bidops.net
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: The main site returns only a JavaScript shell with no machine‑readable API documentation.
+  evidence:
+    - url: https://bidops.net
+      status: 200
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
